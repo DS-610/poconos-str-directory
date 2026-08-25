@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pine-50: #f2f7f3;
+  --color-pine-100: #e0ede3;
+  --color-pine-200: #c2dcc9;
+  --color-pine-300: #97c2a4;
+  --color-pine-400: #67a17b;
+  --color-pine-500: #46845d;
+  --color-pine-600: #346a49;
+  --color-pine-700: #2b553c;
+  --color-pine-800: #254532;
+  --color-pine-900: #1f392a;
+  --color-pine-950: #102019;
+  --color-cream: #faf7f0;
+  --color-ember-50: #fff8eb;
+  --color-ember-100: #ffedc6;
+  --color-ember-200: #ffd888;
+  --color-ember-300: #ffbe4a;
+  --color-ember-400: #ffa521;
+  --color-ember-500: #f98207;
+  --color-ember-600: #dd5f02;
+  --color-ember-700: #b74106;
+  --color-ember-800: #94320c;
+  --color-ember-900: #7a2a0d;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #1c1917;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: var(--color-ember-200);
+  color: var(--color-pine-950);
+}
