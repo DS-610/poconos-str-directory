@@ -43,6 +43,7 @@ create table public.providers (
   year_founded integer,
   price_note text,
   photo_url text,
+  is_demo boolean default false,
   is_active boolean default true,
   created_at timestamptz default now(),
   updated_at timestamptz default now()

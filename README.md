@@ -55,3 +55,18 @@ npm run dev    # local dev server
 npm run build  # production build
 npm run lint   # eslint
 ```
+
+## Supabase migration (already-deployed site)
+
+The deployed site already reads from Supabase (when configured). If you need
+to re-run the database setup on a fresh Supabase project:
+
+1. Create a project at supabase.com.
+2. In the SQL Editor, run `supabase/schema.sql`.
+3. Optional: run `supabase/seed-demo.sql` to load 32 demo providers
+   (marked `is_demo = true`).
+4. Add `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, and
+   `SUPABASE_SERVICE_ROLE_KEY` to Vercel env vars and redeploy.
+
+When Supabase is configured, the directory reads providers live from the DB.
+Without config, it falls back to the static seed data in `lib/data.ts`.

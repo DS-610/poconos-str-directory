@@ -1,18 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { PROVIDERS, getProviderBySlug } from "@/lib/data";
 import { CATEGORY_LABELS, TIER_LABELS, TIER_STYLES, formatPhone, formatRating } from "@/lib/utils";
+import { getProviderBySlug, getAllProviders } from "@/lib/repository";
 
 type Params = Promise<{ slug: string }>;
 
-export function generateStaticParams() {
-  return PROVIDERS.map((p) => ({ slug: p.slug }));
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  const providers = await getAllProviders();
+  return providers.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { slug } = await params;
-  const provider = getProviderBySlug(slug);
+  const provider = await getProviderBySlug(slug);
   if (!provider) return { title: "Provider Not Found" };
   return {
     title: provider.name,
@@ -22,7 +25,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
 export default async function ProviderPage({ params }: { params: Params }) {
   const { slug } = await params;
-  const provider = getProviderBySlug(slug);
+  const provider = await getProviderBySlug(slug);
   if (!provider) notFound();
 
   return (
@@ -49,7 +52,7 @@ export default async function ProviderPage({ params }: { params: Params }) {
               </span>
               {provider.verified && (
                 <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 ring-1 ring-emerald-200">
-                  ✓ Verified STR Pro
+                  &#10003; Verified STR Pro
                 </span>
               )}
             </div>
@@ -59,7 +62,7 @@ export default async function ProviderPage({ params }: { params: Params }) {
             <p className="mt-2 text-lg text-stone-600">{provider.tagline}</p>
           </div>
           <div className="flex items-center gap-1.5 rounded-2xl bg-amber-50 px-4 py-3 ring-1 ring-amber-200">
-            <span className="text-2xl text-amber-500">★</span>
+            <span className="text-2xl text-amber-500">&#9733;</span>
             <div>
               <p className="text-xl font-bold text-stone-900">{formatRating(provider.rating)}</p>
               <p className="text-xs text-stone-500">{provider.reviewCount} host reviews</p>
@@ -76,7 +79,7 @@ export default async function ProviderPage({ params }: { params: Params }) {
           </div>
           <div className="rounded-2xl bg-stone-50 p-4">
             <p className="text-xs font-semibold uppercase tracking-wide text-stone-500">Coverage</p>
-            <p className="mt-1 font-semibold text-stone-900">{provider.counties.join(" · ")} Counties</p>
+            <p className="mt-1 font-semibold text-stone-900">{provider.counties.join(" \u00b7 ")} Counties</p>
           </div>
           <div className="rounded-2xl bg-stone-50 p-4">
             <p className="text-xs font-semibold uppercase tracking-wide text-stone-500">Typical pricing</p>
@@ -111,8 +114,8 @@ export default async function ProviderPage({ params }: { params: Params }) {
             <p className="text-sm font-semibold text-stone-900">
               {provider.name}
               <span className="ml-2 text-xs font-normal text-stone-500">
-                {provider.licensed && "Licensed"} {provider.licensed && provider.insured && "· "}
-                {provider.insured && "Insured"} · Est. {provider.yearFounded}
+                {provider.licensed && "Licensed"} {provider.licensed && provider.insured && "\u00b7 "}
+                {provider.insured && "Insured"} {provider.yearFounded ? `\u00b7 Est. ${provider.yearFounded}` : ""}
               </span>
             </p>
             <p className="mt-1 text-sm text-stone-600">{formatPhone(provider.phone)}</p>
@@ -138,18 +141,6 @@ export default async function ProviderPage({ params }: { params: Params }) {
             Request a Quote
           </a>
         </div>
-      </div>
-
-      <div className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm text-stone-700">
-        <strong className="text-amber-800">Hosts:</strong> Don&apos;t see what you need?{" "}
-        <Link href="/providers" className="font-semibold text-pine-700 underline">
-          Browse all {PROVIDERS.length} providers
-        </Link>{" "}
-        or{" "}
-        <Link href="/about" className="font-semibold text-pine-700 underline">
-          tell us what you&apos;re looking for
-        </Link>
-        .
       </div>
     </div>
   );

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ProviderCard from "@/components/ProviderCard";
-import { CATEGORIES, getProvidersByCategory } from "@/lib/data";
+import { CATEGORIES } from "@/lib/data";
+import { getProvidersByCategory } from "@/lib/repository";
 
 type Params = Promise<{ slug: string }>;
 
@@ -24,7 +25,7 @@ export default async function CategoryPage({ params }: { params: Params }) {
   const category = CATEGORIES.find((c) => c.slug === slug);
   if (!category) notFound();
 
-  const providers = getProvidersByCategory(slug);
+  const [providers] = await Promise.all([getProvidersByCategory(slug)]);
   const sorted = [...providers].sort((a, b) => b.rating - a.rating);
 
   return (

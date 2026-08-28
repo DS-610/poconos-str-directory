@@ -1,9 +1,12 @@
 import Link from "next/link";
 import CategoryCard from "@/components/CategoryCard";
 import ProviderCard from "@/components/ProviderCard";
-import { CATEGORIES, FEATURED, PROVIDERS } from "@/lib/data";
+import { CATEGORIES } from "@/lib/data";
+import { getAllProviders } from "@/lib/repository";
 
-export default function Home() {
+export default async function Home() {
+  const allProviders = await getAllProviders();
+  const featured = allProviders.filter((p) => p.tier === "featured");
   return (
     <div>
       {/* Hero */}
@@ -100,11 +103,11 @@ export default function Home() {
               href="/providers"
               className="hidden shrink-0 text-sm font-semibold text-pine-700 hover:text-pine-900 sm:block"
             >
-              See all {PROVIDERS.length} providers →
+              See all {allProviders.length} providers →
             </Link>
           </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {FEATURED.map((provider) => (
+            {featured.map((provider) => (
               <ProviderCard key={provider.slug} provider={provider} />
             ))}
           </div>

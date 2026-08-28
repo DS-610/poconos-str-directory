@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ProviderCard from "@/components/ProviderCard";
 import ProviderFilters from "@/components/ProviderFilters";
-import { PROVIDERS } from "@/lib/data";
+import { getAllProviders } from "@/lib/repository";
 import type { Provider } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -41,14 +41,14 @@ function matches(provider: Provider, q: string, category: string, county: string
 }
 
 export default async function ProvidersPage({ searchParams }: { searchParams: SearchParams }) {
-  const params = await searchParams;
+  const [params, allProviders] = await Promise.all([searchParams, getAllProviders()]);
   const q = asString(params.q).trim();
   const category = asString(params.category);
   const county = asString(params.county);
   const tier = asString(params.tier);
   const verifiedOnly = asString(params.verified) === "1";
 
-  const filtered = PROVIDERS.filter((p) => matches(p, q, category, county, tier, verifiedOnly));
+  const filtered = allProviders.filter((p) => matches(p, q, category, county, tier, verifiedOnly));
   const sorted = [...filtered].sort((a, b) => b.rating - a.rating);
   const hasFilters = Boolean(q || category || county || tier || verifiedOnly);
 
@@ -63,7 +63,7 @@ export default async function ProvidersPage({ searchParams }: { searchParams: Se
         Browse providers
       </h1>
       <p className="mt-2 max-w-2xl text-stone-600">
-        {PROVIDERS.length} service providers vetted for short-term rental work
+        {allProviders.length} service providers vetted for short-term rental work
         across the Poconos. Filter by category, county, or listing tier.
       </p>
 
