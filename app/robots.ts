@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
+  const base = process.env.NEXT_PUBLIC_SITE_URL || "https://poconos-str-directory-zeta.vercel.app";
   return {
     rules: [
       {
@@ -9,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/dashboard/", "/auth/"],
       },
     ],
-    sitemap: "https://poconos-str-directory-zeta.vercel.app/sitemap.xml",
+    sitemap: `${base}/sitemap.xml`,
   };
 }

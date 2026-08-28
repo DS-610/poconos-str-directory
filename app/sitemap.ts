@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
-import { PROVIDERS, CATEGORIES, COUNTIES } from "@/lib/data";
+import { CATEGORIES, PROVIDERS } from "@/lib/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://poconos-str-directory-zeta.vercel.app";
+  const base = process.env.NEXT_PUBLIC_SITE_URL || "https://poconos-str-directory-zeta.vercel.app";
 
   const staticPages = [
     { url: base, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 1 },
