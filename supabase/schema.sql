@@ -42,8 +42,10 @@ create table public.providers (
   licensed boolean default false,
   year_founded integer,
   price_note text,
+  pricing_notes text,
   photo_url text,
   is_demo boolean default false,
+  featured_resorts text[] default ARRAY[]::text[],
   is_active boolean default true,
   created_at timestamptz default now(),
   updated_at timestamptz default now()

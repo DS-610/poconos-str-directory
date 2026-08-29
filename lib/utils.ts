@@ -11,6 +11,9 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   linens: "Linen Supply",
   photography: "Photography & Staging",
   suppliers: "Furniture & Supplies",
+  hottub: "Hot Tub Service",
+  pest: "Pest Control",
+  trash: "Trash Valet",
 };
 
 export const TIER_LABELS: Record<ProviderTier, string> = {

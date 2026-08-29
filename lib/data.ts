@@ -91,6 +91,30 @@ export const CATEGORIES: CategoryMeta[] = [
     icon: "🛋️",
     typicalCost: "Varies",
   },
+  {
+    slug: "hottub",
+    label: "Hot Tub Service",
+    shortLabel: "Hot Tubs",
+    description: "Chemical balancing, drain and refill, cover care, and winterization for vacation rental hot tubs.",
+    icon: "🛁",
+    typicalCost: "$80–$150 / visit"
+  },
+  {
+    slug: "pest",
+    label: "Pest Control",
+    shortLabel: "Pest",
+    description: "Seasonal pest control and preventative treatments to keep vacation rentals guest-ready and complaint-free.",
+    icon: "🐜",
+    typicalCost: "$150–$300 / treatment"
+  },
+  {
+    slug: "trash",
+    label: "Trash Valet",
+    shortLabel: "Trash",
+    description: "Weekly trash and recycling pickup and return, can cleaning, and outdoor maintenance so hosts never worry about garbage day.",
+    icon: "🗑️",
+    typicalCost: "From $49 / month"
+  },
 ];
 
 export const PROVIDERS: Provider[] = [

@@ -29,6 +29,8 @@ interface DbProviderRow {
   licensed: boolean;
   year_founded: number | null;
   price_note: string | null;
+  pricing_notes: string | null;
+  featured_resorts: string[];
   is_demo: boolean;
   is_active: boolean;
 }
@@ -55,6 +57,8 @@ function rowToProvider(row: DbProviderRow): Provider {
     licensed: row.licensed,
     yearFounded: row.year_founded || 0,
     priceNote: row.price_note || undefined,
+    pricingNotes: row.pricing_notes || undefined,
+    featuredResorts: row.featured_resorts || [],
   };
 }
 

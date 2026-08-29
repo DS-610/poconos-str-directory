@@ -1,14 +1,17 @@
 export type Category =
   | "cleaning"
+  | "hottub"
   | "maintenance"
   | "hvac"
+  | "pest"
   | "plumbing"
   | "electrical"
   | "landscaping"
   | "snow-removal"
   | "linens"
   | "photography"
-  | "suppliers";
+  | "suppliers"
+  | "trash";
 
 export type County = "Monroe" | "Pike" | "Carbon" | "Wayne";
 
@@ -35,6 +38,8 @@ export interface Provider {
   licensed: boolean;
   yearFounded: number;
   priceNote?: string;
+  pricingNotes?: string;
+  featuredResorts?: string[];
 }
 
 export interface CategoryMeta {

@@ -3,6 +3,9 @@ import type { Provider } from "@/lib/types";
 import { CATEGORY_LABELS, TIER_LABELS, TIER_STYLES, formatPhone, formatRating } from "@/lib/utils";
 
 export default function ProviderCard({ provider }: { provider: Provider }) {
+  const displayTagline = provider.pricingNotes || provider.tagline;
+  const displayPrice = provider.pricingNotes || provider.priceNote;
+
   return (
     <Link
       href={`/providers/${provider.slug}`}
@@ -24,41 +27,32 @@ export default function ProviderCard({ provider }: { provider: Provider }) {
         </span>
       </div>
 
-      <p className="mt-2 flex-1 text-sm leading-6 text-stone-600">{provider.tagline}</p>
+      <p className="mt-2 flex-1 text-sm leading-6 text-stone-600">{displayTagline}</p>
 
-      <div className="mt-3 flex flex-wrap gap-1.5">
-        {provider.services.slice(0, 3).map((s) => (
-          <span
-            key={s}
-            className="rounded-full bg-stone-100 px-2.5 py-1 text-xs font-medium text-stone-600"
-          >
-            {s}
-          </span>
-        ))}
-        {provider.services.length > 3 && (
-          <span className="rounded-full bg-stone-100 px-2.5 py-1 text-xs font-medium text-stone-500">
-            +{provider.services.length - 3} more
-          </span>
-        )}
-      </div>
+      {provider.featuredResorts && provider.featuredResorts.length > 0 && (
+        <div className="mt-2 flex flex-wrap gap-1">
+          {provider.featuredResorts.map((resort) => (
+            <span key={resort} className="rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-800">
+              {resort}
+            </span>
+          ))}
+        </div>
+      )}
+
+      {displayPrice && (
+        <p className="mt-2 text-sm font-semibold text-stone-700">{displayPrice}</p>
+      )}
 
       <div className="mt-4 flex items-center justify-between border-t border-stone-100 pt-3 text-sm">
         <span className="flex items-center gap-1.5">
-          <span className="text-amber-500">★</span>
+          <span className="text-amber-500">&#9733;</span>
           <span className="font-semibold text-stone-900">{formatRating(provider.rating)}</span>
           <span className="text-stone-400">({provider.reviewCount})</span>
         </span>
         <span className="flex items-center gap-1.5 text-stone-500">
           {provider.verified && (
             <span className="inline-flex items-center gap-1 text-pine-700">
-              <svg viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4" aria-hidden="true">
-                <path
-                  fillRule="evenodd"
-                  d="M10 1a4.5 4.5 0 0 0-4.5 4.5V9H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-.5V5.5A4.5 4.5 0 0 0 10 1Zm3 8V5.5a3 3 0 1 0-6 0V9h6Z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              Verified
+              &#10003; Verified
             </span>
           )}
           {formatPhone(provider.phone)}
