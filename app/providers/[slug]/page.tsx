@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CATEGORY_LABELS, TIER_LABELS, TIER_STYLES, formatPhone, formatRating } from "@/lib/utils";
@@ -41,6 +42,18 @@ export default async function ProviderPage({ params }: { params: Params }) {
       </nav>
 
       <div className="mt-6 rounded-3xl border border-stone-200 bg-white p-6 shadow-sm sm:p-8">
+        {provider.photoUrl && (
+          <div className="relative mb-6 h-56 w-full overflow-hidden rounded-2xl sm:h-72">
+            <Image
+              src={provider.photoUrl}
+              alt={provider.name}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 768px"
+              priority
+            />
+          </div>
+        )}
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-start">
           <div>
             <div className="flex flex-wrap items-center gap-2">

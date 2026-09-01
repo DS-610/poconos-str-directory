@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Provider } from "@/lib/types";
 import { CATEGORY_LABELS, TIER_LABELS, TIER_STYLES, formatPhone, formatRating } from "@/lib/utils";
 
@@ -11,6 +12,17 @@ export default function ProviderCard({ provider }: { provider: Provider }) {
       href={`/providers/${provider.slug}`}
       className="group flex flex-col rounded-2xl border border-stone-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-pine-300 hover:shadow-md"
     >
+      {provider.photoUrl && (
+        <div className="relative mb-4 h-40 w-full overflow-hidden rounded-xl">
+          <Image
+            src={provider.photoUrl}
+            alt={provider.name}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+        </div>
+      )}
       <div className="flex items-start justify-between gap-3">
         <div>
           <p className="text-xs font-semibold uppercase tracking-wide text-pine-600">

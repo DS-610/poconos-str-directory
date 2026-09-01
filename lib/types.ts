@@ -40,6 +40,7 @@ export interface Provider {
   priceNote?: string;
   pricingNotes?: string;
   featuredResorts?: string[];
+  photoUrl?: string;
 }
 
 export interface CategoryMeta {

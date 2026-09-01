@@ -31,6 +31,7 @@ interface DbProviderRow {
   price_note: string | null;
   pricing_notes: string | null;
   featured_resorts: string[];
+  photo_url: string | null;
   is_demo: boolean;
   is_active: boolean;
 }
@@ -59,6 +60,7 @@ function rowToProvider(row: DbProviderRow): Provider {
     priceNote: row.price_note || undefined,
     pricingNotes: row.pricing_notes || undefined,
     featuredResorts: row.featured_resorts || [],
+    photoUrl: row.photo_url || undefined,
   };
 }
 
