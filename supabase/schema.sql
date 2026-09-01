@@ -47,6 +47,10 @@ create table public.providers (
   is_demo boolean default false,
   featured_resorts text[] default ARRAY[]::text[],
   is_active boolean default true,
+  outreach_status text check (outreach_status in ('pending', 'emailed', 'responded', 'claimed')) default 'pending',
+  outreach_contacted_at timestamptz,
+  outreach_notes text,
+  outreach_email_count integer default 0,
   created_at timestamptz default now(),
   updated_at timestamptz default now()
 );
@@ -88,6 +92,7 @@ create table public.reviews (
 create index idx_providers_category on public.providers(category);
 create index idx_providers_counties on public.providers using gin(counties);
 create index idx_providers_tier on public.providers(tier);
+create index idx_providers_outreach_status on public.providers(outreach_status);
 create index idx_providers_slug on public.providers(slug);
 create index idx_host_favorites_host on public.host_favorites(host_id);
 create index idx_quote_requests_provider on public.quote_requests(provider_id);

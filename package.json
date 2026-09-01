@@ -6,12 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "outreach:dry": "npx tsx scripts/providers/outreach.ts --dry-run",
+    "outreach:send": "npx tsx scripts/providers/outreach.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.5",
     "@supabase/supabase-js": "^2.112.4",
+    "csv-parse": "^7.0.2",
     "next": "16.3.0",
+    "nodemailer": "^9.0.6",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "stripe": "^22.5.0"
@@ -21,6 +25,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "composio": "^1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.3.0",
     "tailwindcss": "^4",
