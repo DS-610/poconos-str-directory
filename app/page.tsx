@@ -175,7 +175,7 @@ export default async function Home() {
               Claim Your Free Listing
             </Link>
             <Link
-              href="/about"
+              href="/contact"
               className="rounded-full border border-pine-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-pine-800"
             >
               Contact Us

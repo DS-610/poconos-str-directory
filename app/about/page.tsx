@@ -74,22 +74,33 @@ export default function AboutPage() {
       <h2 className="mt-12 text-2xl font-bold tracking-tight text-stone-900">Contact</h2>
       <div className="mt-4 rounded-2xl border border-stone-200 bg-white p-6">
         <p className="text-sm leading-7 text-stone-700">
-          <strong className="text-stone-900">Hosts:</strong>{" "}
-          <a href="mailto:hosts@poconosstrdirectory.com" className="text-pine-700 hover:underline">
-            hosts@poconosstrdirectory.com
+          <strong className="text-stone-900">General:</strong>{" "}
+          <a href="mailto:contact@poconossrt.com" className="text-pine-700 hover:underline">
+            contact@poconossrt.com
           </a>
         </p>
         <p className="mt-2 text-sm leading-7 text-stone-700">
-          <strong className="text-stone-900">Providers:</strong>{" "}
-          <a href="mailto:providers@poconosstrdirectory.com" className="text-pine-700 hover:underline">
-            providers@poconosstrdirectory.com
+          <strong className="text-stone-900">Support:</strong>{" "}
+          <a href="mailto:support@poconossrt.com" className="text-pine-700 hover:underline">
+            support@poconossrt.com
+          </a>
+        </p>
+        <p className="mt-2 text-sm leading-7 text-stone-700">
+          <strong className="text-stone-900">Billing:</strong>{" "}
+          <a href="mailto:billing@poconossrt.com" className="text-pine-700 hover:underline">
+            billing@poconossrt.com
           </a>
         </p>
         <p className="mt-2 text-sm leading-7 text-stone-700">
           <strong className="text-stone-900">Partnerships &amp; sponsorships:</strong>{" "}
-          <a href="mailto:partners@poconosstrdirectory.com" className="text-pine-700 hover:underline">
-            partners@poconosstrdirectory.com
+          <a href="mailto:partner@poconossrt.com" className="text-pine-700 hover:underline">
+            partner@poconossrt.com
           </a>
+        </p>
+        <p className="mt-4 border-t border-stone-100 pt-4 text-sm leading-7 text-stone-700">
+          Or use our{" "}
+          <Link href="/contact" className="text-pine-700 hover:underline">contact form</Link>{" "}
+          and we&apos;ll get back to you.
         </p>
       </div>
     </div>

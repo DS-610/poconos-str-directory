@@ -170,7 +170,7 @@ export default function PricingPage() {
                 />
               ) : (
                 <a
-                  href="mailto:providers@poconosstrdirectory.com?subject=Provider%20Listing%20Inquiry"
+                  href="mailto:partner@poconossrt.com?subject=Provider%20Listing%20Inquiry"
                   className="mt-6 inline-flex w-full items-center justify-center rounded-full border border-pine-700 px-4 py-2.5 text-sm font-semibold text-pine-800 transition hover:bg-pine-50"
                 >
                   {plan.cta}
