@@ -1,8 +1,11 @@
 import type { MetadataRoute } from "next";
-import { CATEGORIES, PROVIDERS } from "@/lib/data";
+import { CATEGORIES } from "@/lib/data";
+import { getAllProviders } from "@/lib/repository";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || "https://poconos-str-directory-zeta.vercel.app";
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const base = process.env.NEXT_PUBLIC_SITE_URL || "https://poconossrt.com";
+
+  const providers = await getAllProviders();
 
   const staticPages = [
     { url: base, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 1 },
@@ -10,9 +13,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/categories`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.8 },
     { url: `${base}/pricing`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${base}/about`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.5 },
+    { url: `${base}/contact`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.5 },
+    { url: `${base}/privacy`, lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.2 },
+    { url: `${base}/terms`, lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.2 },
+    { url: `${base}/cookies`, lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.2 },
+    { url: `${base}/refunds`, lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.2 },
   ];
 
-  const providerPages = PROVIDERS.map((p) => ({
+  const providerPages = providers.map((p) => ({
     url: `${base}/providers/${p.slug}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
