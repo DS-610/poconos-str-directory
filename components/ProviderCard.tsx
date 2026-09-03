@@ -32,11 +32,18 @@ export default function ProviderCard({ provider }: { provider: Provider }) {
             {provider.name}
           </h3>
         </div>
-        <span
-          className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] font-semibold ring-1 ${TIER_STYLES[provider.tier]}`}
-        >
-          {TIER_LABELS[provider.tier]}
-        </span>
+        <div className="flex shrink-0 flex-col items-end gap-1">
+          {provider.boostActive && (
+            <span className="rounded-full bg-ember-50 px-2 py-0.5 text-[11px] font-semibold text-ember-700 ring-1 ring-ember-200">
+              &#9650; Boosted
+            </span>
+          )}
+          <span
+            className={`rounded-full px-2 py-0.5 text-[11px] font-semibold ring-1 ${TIER_STYLES[provider.tier]}`}
+          >
+            {TIER_LABELS[provider.tier]}
+          </span>
+        </div>
       </div>
 
       <p className="mt-2 flex-1 text-sm leading-6 text-stone-600">{displayTagline}</p>

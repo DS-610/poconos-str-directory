@@ -41,6 +41,7 @@ export interface Provider {
   pricingNotes?: string;
   featuredResorts?: string[];
   photoUrl?: string;
+  boostActive?: boolean;
 }
 
 export interface CategoryMeta {

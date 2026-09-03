@@ -32,6 +32,8 @@ interface DbProviderRow {
   pricing_notes: string | null;
   featured_resorts: string[];
   photo_url: string | null;
+  boost_active: boolean;
+  boosted_until: string | null;
   is_demo: boolean;
   is_active: boolean;
 }
@@ -61,6 +63,7 @@ function rowToProvider(row: DbProviderRow): Provider {
     pricingNotes: row.pricing_notes || undefined,
     featuredResorts: row.featured_resorts || [],
     photoUrl: row.photo_url || undefined,
+    boostActive: row.boost_active || false,
   };
 }
 

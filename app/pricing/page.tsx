@@ -4,8 +4,7 @@ import PricingButton from "@/components/PricingButton";
 
 export const metadata: Metadata = {
   title: "Pricing & Listings",
-  description:
-    "Provider listing tiers and owner access plans for the Poconos STR Directory. Free listings for providers, free browsing for hosts.",
+  description: "Provider listing tiers and owner access plans for the Poconos STR Directory. Free listings for providers, free browsing for hosts.",
 };
 
 const PROVIDER_PLANS = [
@@ -27,6 +26,7 @@ const PROVIDER_PLANS = [
     name: "Standard",
     price: "$75",
     cadence: "/month",
+    annual: "$750/yr (save $150)",
     features: [
       "Everything in Basic",
       "Photo, description & reviews",
@@ -41,6 +41,7 @@ const PROVIDER_PLANS = [
     name: "Premium",
     price: "$150",
     cadence: "/month",
+    annual: "$1,500/yr (save $300)",
     features: [
       "Everything in Standard",
       "Verified STR Pro badge",
@@ -55,6 +56,7 @@ const PROVIDER_PLANS = [
     name: "Featured",
     price: "$250",
     cadence: "/month",
+    annual: "$2,500/yr (save $500)",
     features: [
       "Everything in Premium",
       "Homepage rotation & Top Pick badge",
@@ -110,6 +112,35 @@ const OWNER_PLANS = [
   },
 ];
 
+const ONE_TIME_PRODUCTS = [
+  {
+    name: "Featured Boost",
+    price: "$49",
+    description: "7-day homepage rotation and top placement in your category. No subscription required.",
+    features: [
+      "Homepage rotation for 7 days",
+      "Top placement in category search",
+      "Highlighted with boost badge",
+      "One-time purchase, no recurring charge",
+    ],
+    tier: "featured_boost",
+    icon: "🚀",
+  },
+  {
+    name: "Verification Badge",
+    price: "$99",
+    description: "One-time fee for the Verified STR Pro badge. Shows hosts you're licensed, insured, and vetted.",
+    features: [
+      "Verified STR Pro badge on profile",
+      "Higher trust with browsing hosts",
+      "One-time purchase, never expires",
+      "Appears in verified-only searches",
+    ],
+    tier: "verification_badge",
+    icon: "✅",
+  },
+];
+
 export default function PricingPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
@@ -129,6 +160,7 @@ export default function PricingPage() {
         </p>
       </div>
 
+      {/* Provider Plans */}
       <div className="mt-14">
         <h2 className="text-center text-xl font-bold text-stone-900">
           For service providers
@@ -154,6 +186,11 @@ export default function PricingPage() {
                 <span className="text-3xl font-bold text-stone-900">{plan.price}</span>
                 <span className="text-sm text-stone-500"> {plan.cadence}</span>
               </p>
+              {plan.annual && (
+                <p className="mt-1 text-xs font-medium text-pine-700">
+                  or {plan.annual}
+                </p>
+              )}
               <ul className="mt-4 flex-1 space-y-2.5">
                 {plan.features.map((f) => (
                   <li key={f} className="flex gap-2 text-sm text-stone-600">
@@ -181,6 +218,48 @@ export default function PricingPage() {
         </div>
       </div>
 
+      {/* One-Time Products */}
+      <div className="mt-16">
+        <h2 className="text-center text-xl font-bold text-stone-900">One-time products</h2>
+        <p className="mt-1 text-center text-sm text-stone-500">
+          No subscription required — pay once, get the boost
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {ONE_TIME_PRODUCTS.map((product) => (
+            <div
+              key={product.tier}
+              className="flex flex-col rounded-2xl border border-stone-200 bg-white p-6 shadow-sm"
+            >
+              <div className="flex items-start gap-3">
+                <span className="text-2xl">{product.icon}</span>
+                <div>
+                  <h3 className="text-lg font-semibold text-stone-900">{product.name}</h3>
+                  <p className="mt-1 text-sm text-stone-500">{product.description}</p>
+                </div>
+              </div>
+              <p className="mt-4">
+                <span className="text-3xl font-bold text-stone-900">{product.price}</span>
+                <span className="text-sm text-stone-500"> one-time</span>
+              </p>
+              <ul className="mt-4 flex-1 space-y-2.5">
+                {product.features.map((f) => (
+                  <li key={f} className="flex gap-2 text-sm text-stone-600">
+                    <span className="text-pine-600">&#10003;</span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <PricingButton
+                tier={product.tier}
+                label={`Buy ${product.name}`}
+                variant="secondary"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Host Plans */}
       <div className="mt-20">
         <h2 className="text-center text-xl font-bold text-stone-900">For hosts & property managers</h2>
         <p className="mt-1 text-center text-sm text-stone-500">
@@ -230,7 +309,7 @@ export default function PricingPage() {
           ))}
         </div>
         <p className="mt-6 text-center text-xs text-stone-500">
-          Payments via Stripe · Cancel anytime · First 30 days of Standard free for providers
+          Payments via Stripe · Cancel anytime · Annual plans available for providers
         </p>
       </div>
     </div>

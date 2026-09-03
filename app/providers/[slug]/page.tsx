@@ -63,6 +63,11 @@ export default async function ProviderPage({ params }: { params: Params }) {
               <span className={`rounded-full px-3 py-1 text-xs font-semibold ring-1 ${TIER_STYLES[provider.tier]}`}>
                 {TIER_LABELS[provider.tier]}
               </span>
+              {provider.boostActive && (
+                <span className="inline-flex items-center gap-1 rounded-full bg-ember-50 px-3 py-1 text-xs font-semibold text-ember-700 ring-1 ring-ember-200">
+                  &#9650; Featured Boost
+                </span>
+              )}
               {provider.verified && (
                 <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 ring-1 ring-emerald-200">
                   &#10003; Verified STR Pro
