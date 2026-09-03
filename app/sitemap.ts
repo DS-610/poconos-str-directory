@@ -18,6 +18,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${base}/terms`, lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.2 },
     { url: `${base}/cookies`, lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.2 },
     { url: `${base}/refunds`, lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.2 },
+    { url: `${base}/partners`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
+    { url: `${base}/blog`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.7 },
+    { url: `${base}/blog/best-cleaning-services-poconos-airbnb`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${base}/blog/poconos-hvac-winterization-guide`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${base}/blog/hot-tub-maintenance-vacation-rental`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${base}/blog/poconos-trash-valet-vacation-rentals`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${base}/blog/finding-reliable-handyman-poconos`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${base}/blog/poconos-pest-control-vacation-rentals`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
   ];
 
   const providerPages = providers.map((p) => ({

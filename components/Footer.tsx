@@ -31,7 +31,18 @@ export default function Footer() {
             <li><Link className="hover:text-white" href="/categories">Categories</Link></li>
             <li><Link className="hover:text-white" href="/pricing">Pricing</Link></li>
             <li><Link className="hover:text-white" href="/about">About</Link></li>
+            <li><Link className="hover:text-white" href="/blog">Blog</Link></li>
             <li><Link className="hover:text-white" href="/contact">Contact</Link></li>
+          </ul>
+        </div>
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-wider text-pine-300">
+            For Providers
+          </p>
+          <ul className="mt-3 space-y-2 text-sm">
+            <li><Link className="hover:text-white" href="/pricing">Listings &amp; Tiers</Link></li>
+            <li><Link className="hover:text-white" href="/partners">Partner With Us</Link></li>
+            <li><Link className="hover:text-white" href="/contact">Contact Us</Link></li>
           </ul>
         </div>
         <div>

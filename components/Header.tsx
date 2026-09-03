@@ -4,7 +4,9 @@ const NAV = [
   { href: "/providers", label: "Browse Providers" },
   { href: "/categories", label: "Categories" },
   { href: "/pricing", label: "Pricing" },
+  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
+  { href: "/partners", label: "Partners" },
 ];
 
 export default function Header() {
