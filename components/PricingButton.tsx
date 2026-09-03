@@ -6,9 +6,10 @@ interface PricingButtonProps {
   tier: string;
   label: string;
   variant?: "primary" | "secondary";
+  billing?: "monthly" | "annual";
 }
 
-export default function PricingButton({ tier, label, variant = "secondary" }: PricingButtonProps) {
+export default function PricingButton({ tier, label, variant = "secondary", billing }: PricingButtonProps) {
   const [loading, setLoading] = useState(false);
 
   async function handleCheckout() {
@@ -17,7 +18,7 @@ export default function PricingButton({ tier, label, variant = "secondary" }: Pr
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ tier }),
+        body: JSON.stringify({ tier, billing }),
       });
       const data = await res.json();
       if (data.url) {
