@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import Link from "next/link";
 
 interface Message {
   role: "user" | "assistant";
@@ -49,7 +48,7 @@ export default function ChatBot() {
     } catch {
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", text: "Sorry, something went wrong. Try again or browse providers directly at /providers." },
+        { role: "assistant", text: "Sorry, something went wrong. Try again or browse providers at poconossrt.com/providers." },
       ]);
     } finally {
       setLoading(false);
@@ -66,7 +65,7 @@ export default function ChatBot() {
       {/* Floating button */}
       <button
         onClick={() => setOpen(!open)}
-        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-pine-800 text-2xl text-white shadow-lg transition hover:bg-pine-900 hover:scale-105"
+        className="fixed bottom-5 right-5 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-pine-800 text-xl text-white shadow-lg transition hover:bg-pine-900 hover:scale-105 sm:bottom-6 sm:right-6 sm:h-14 sm:w-14 sm:text-2xl"
         aria-label="Open chat assistant"
       >
         {open ? "✕" : "💬"}
@@ -74,25 +73,25 @@ export default function ChatBot() {
 
       {/* Chat window */}
       {open && (
-        <div className="fixed bottom-24 right-6 z-50 flex w-[360px] flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-2xl sm:w-[400px]">
+        <div className="fixed inset-x-3 bottom-20 z-50 flex max-h-[70vh] flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-2xl sm:inset-x-auto sm:bottom-24 sm:right-5 sm:w-[380px] sm:max-h-[480px] md:right-6 md:w-[400px]">
           {/* Header */}
-          <div className="flex items-center gap-3 border-b border-stone-200 bg-pine-800 px-4 py-3">
-            <span className="text-xl">🏔️</span>
-            <div>
+          <div className="flex shrink-0 items-center gap-3 border-b border-stone-200 bg-pine-800 px-4 py-3">
+            <span className="text-lg sm:text-xl">🏔️</span>
+            <div className="min-w-0">
               <p className="text-sm font-semibold text-white">Poconos STR Directory</p>
               <p className="text-xs text-pine-200">Ask me anything about the site</p>
             </div>
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto px-4 py-4" style={{ maxHeight: "400px" }}>
+          <div className="flex-1 overflow-y-auto px-3 py-3 sm:px-4 sm:py-4">
             {messages.map((msg, i) => (
               <div
                 key={i}
-                className={`mb-3 flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
+                className={`mb-2.5 flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
               >
                 <div
-                  className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-6 ${
+                  className={`max-w-[85%] rounded-2xl px-3 py-2 text-[13px] leading-5 sm:px-4 sm:py-2.5 sm:text-sm sm:leading-6 ${
                     msg.role === "user"
                       ? "bg-pine-800 text-white"
                       : "bg-stone-100 text-stone-800"
@@ -103,8 +102,8 @@ export default function ChatBot() {
               </div>
             ))}
             {loading && (
-              <div className="mb-3 flex justify-start">
-                <div className="rounded-2xl bg-stone-100 px-4 py-2.5 text-sm text-stone-500">
+              <div className="mb-2.5 flex justify-start">
+                <div className="rounded-2xl bg-stone-100 px-3 py-2 text-[13px] text-stone-500 sm:px-4 sm:text-sm">
                   Thinking...
                 </div>
               </div>
@@ -112,14 +111,14 @@ export default function ChatBot() {
             <div ref={messagesEnd} />
           </div>
 
-          {/* Quick actions (show only at start) */}
+          {/* Quick actions */}
           {messages.length <= 1 && (
-            <div className="flex flex-wrap gap-2 px-4 pb-2">
+            <div className="flex shrink-0 flex-wrap gap-1.5 px-3 pb-2 sm:gap-2 sm:px-4">
               {QUICK_ACTIONS.map((action) => (
                 <button
                   key={action.label}
                   onClick={() => sendMessage(action.query)}
-                  className="rounded-full border border-stone-200 bg-white px-3 py-1.5 text-xs font-medium text-stone-700 transition hover:bg-pine-50 hover:text-pine-800"
+                  className="rounded-full border border-stone-200 bg-white px-2.5 py-1 text-[11px] font-medium text-stone-700 transition hover:bg-pine-50 hover:text-pine-800 sm:px-3 sm:py-1.5 sm:text-xs"
                 >
                   {action.label}
                 </button>
@@ -128,19 +127,19 @@ export default function ChatBot() {
           )}
 
           {/* Input */}
-          <form onSubmit={handleSubmit} className="flex gap-2 border-t border-stone-200 p-3">
+          <form onSubmit={handleSubmit} className="flex shrink-0 gap-2 border-t border-stone-200 p-2.5 sm:p-3">
             <input
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask about providers, pricing, services..."
-              className="flex-1 rounded-full border border-stone-300 bg-white px-4 py-2 text-sm focus:border-pine-500 focus:outline-none focus:ring-2 focus:ring-pine-200"
+              placeholder="Ask about providers, pricing..."
+              className="min-w-0 flex-1 rounded-full border border-stone-300 bg-white px-3 py-2 text-[13px] focus:border-pine-500 focus:outline-none focus:ring-2 focus:ring-pine-200 sm:px-4 sm:text-sm"
               disabled={loading}
             />
             <button
               type="submit"
               disabled={loading || !input.trim()}
-              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-pine-800 text-white transition hover:bg-pine-900 disabled:opacity-40"
+              className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-pine-800 text-sm text-white transition hover:bg-pine-900 disabled:opacity-40 sm:h-9 sm:w-9"
             >
               →
             </button>
