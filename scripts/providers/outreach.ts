@@ -32,7 +32,7 @@ const CSV_PATH = path.resolve(
 );
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://poconossrt.com";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://poconosstr.com";
 
 function getTargets(): Target[] {
   const file = fs.readFileSync(CSV_PATH, "utf-8");

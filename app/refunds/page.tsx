@@ -61,7 +61,7 @@ export default function RefundsPage() {
         <p>To request a refund, please contact our billing team:</p>
         <ul className="list-disc pl-5 space-y-1">
           <li>Email:{" "}
-            <a href="mailto:billing@poconossrt.com" className="text-pine-700 hover:underline">billing@poconossrt.com</a>
+            <a href="mailto:billing@poconosstr.com" className="text-pine-700 hover:underline">billing@poconosstr.com</a>
           </li>
           <li>Please include: your account email, the subscription or charge in question, the date of the charge, and the reason for the request</li>
         </ul>
@@ -74,7 +74,7 @@ export default function RefundsPage() {
         <h2 className="text-xl font-bold text-stone-900">5. Chargebacks</h2>
         <p>
           If you believe you have been charged in error, we ask that you contact us first at{" "}
-          <a href="mailto:billing@poconossrt.com" className="text-pine-700 hover:underline">billing@poconossrt.com</a>{" "}
+          <a href="mailto:billing@poconosstr.com" className="text-pine-700 hover:underline">billing@poconosstr.com</a>{" "}
           so we can resolve the issue directly. Filing a chargeback with your bank without first contacting
           us may delay resolution. If a chargeback is issued against a valid charge, your account may be
           suspended.
@@ -87,7 +87,7 @@ export default function RefundsPage() {
         <ul className="list-disc pl-5 space-y-1">
           <li>Through your account&apos;s billing portal, or</li>
           <li>By emailing{" "}
-            <a href="mailto:billing@poconossrt.com" className="text-pine-700 hover:underline">billing@poconossrt.com</a>{" "}
+            <a href="mailto:billing@poconosstr.com" className="text-pine-700 hover:underline">billing@poconosstr.com</a>{" "}
             with your account email
           </li>
         </ul>
@@ -101,7 +101,7 @@ export default function RefundsPage() {
         <p>
           For any questions about this Refund Policy, contact us at:<br />
           Email:{" "}
-          <a href="mailto:billing@poconossrt.com" className="text-pine-700 hover:underline">billing@poconossrt.com</a><br />
+          <a href="mailto:billing@poconosstr.com" className="text-pine-700 hover:underline">billing@poconosstr.com</a><br />
           Address: Poconos, Pennsylvania
         </p>
       </div>

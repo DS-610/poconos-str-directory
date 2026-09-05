@@ -63,7 +63,7 @@ export default function PartnersPage() {
             {
               step: "1",
               title: "Get your unique referral link",
-              body: "We create a custom link for you (e.g. poconossrt.com/r/yourname). Every host that signs up through your link is tracked to you.",
+              body: "We create a custom link for you (e.g. poconosstr.com/r/yourname). Every host that signs up through your link is tracked to you.",
             },
             {
               step: "2",
@@ -125,16 +125,16 @@ export default function PartnersPage() {
         <h2 className="text-2xl font-bold text-white">Ready to partner?</h2>
         <p className="mt-2 text-pine-200">
           Email us at{" "}
-          <a href="mailto:partner@poconossrt.com" className="text-ember-400 underline">
-            partner@poconossrt.com
+          <a href="mailto:partner@poconosstr.com" className="text-ember-400 underline">
+            partner@poconosstr.com
           </a>{" "}
           with your name, company, and how many properties you manage. We&apos;ll set up your referral link within 24 hours.
         </p>
         <a
-          href="mailto:partner@poconossrt.com?subject=Partnership%20Inquiry"
+          href="mailto:partner@poconosstr.com?subject=Partnership%20Inquiry"
           className="mt-5 inline-flex rounded-full bg-ember-500 px-6 py-3 text-sm font-semibold text-pine-950 shadow-md transition hover:bg-ember-400"
         >
-          Email partner@poconossrt.com
+          Email partner@poconosstr.com
         </a>
       </div>
     </div>

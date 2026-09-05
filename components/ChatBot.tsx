@@ -48,7 +48,7 @@ export default function ChatBot() {
     } catch {
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", text: "Sorry, something went wrong. Try again or browse providers at poconossrt.com/providers." },
+        { role: "assistant", text: "Sorry, something went wrong. Try again or browse providers at poconosstr.com/providers." },
       ]);
     } finally {
       setLoading(false);

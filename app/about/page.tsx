@@ -75,26 +75,26 @@ export default function AboutPage() {
       <div className="mt-4 rounded-2xl border border-stone-200 bg-white p-6">
         <p className="text-sm leading-7 text-stone-700">
           <strong className="text-stone-900">General:</strong>{" "}
-          <a href="mailto:contact@poconossrt.com" className="text-pine-700 hover:underline">
-            contact@poconossrt.com
+          <a href="mailto:contact@poconosstr.com" className="text-pine-700 hover:underline">
+            contact@poconosstr.com
           </a>
         </p>
         <p className="mt-2 text-sm leading-7 text-stone-700">
           <strong className="text-stone-900">Support:</strong>{" "}
-          <a href="mailto:support@poconossrt.com" className="text-pine-700 hover:underline">
-            support@poconossrt.com
+          <a href="mailto:support@poconosstr.com" className="text-pine-700 hover:underline">
+            support@poconosstr.com
           </a>
         </p>
         <p className="mt-2 text-sm leading-7 text-stone-700">
           <strong className="text-stone-900">Billing:</strong>{" "}
-          <a href="mailto:billing@poconossrt.com" className="text-pine-700 hover:underline">
-            billing@poconossrt.com
+          <a href="mailto:billing@poconosstr.com" className="text-pine-700 hover:underline">
+            billing@poconosstr.com
           </a>
         </p>
         <p className="mt-2 text-sm leading-7 text-stone-700">
           <strong className="text-stone-900">Partnerships &amp; sponsorships:</strong>{" "}
-          <a href="mailto:partner@poconossrt.com" className="text-pine-700 hover:underline">
-            partner@poconossrt.com
+          <a href="mailto:partner@poconosstr.com" className="text-pine-700 hover:underline">
+            partner@poconosstr.com
           </a>
         </p>
         <p className="mt-4 border-t border-stone-100 pt-4 text-sm leading-7 text-stone-700">

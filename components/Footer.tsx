@@ -15,10 +15,10 @@ export default function Footer() {
           </p>
           <div className="mt-4 space-y-1 text-sm text-pine-200">
             <p>
-              <a href="mailto:contact@poconossrt.com" className="hover:text-white">contact@poconossrt.com</a>
+              <a href="mailto:contact@poconosstr.com" className="hover:text-white">contact@poconosstr.com</a>
             </p>
             <p>
-              <a href="mailto:support@poconossrt.com" className="hover:text-white">support@poconossrt.com</a>
+              <a href="mailto:support@poconosstr.com" className="hover:text-white">support@poconosstr.com</a>
             </p>
           </div>
         </div>

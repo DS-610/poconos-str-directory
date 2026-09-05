@@ -7,7 +7,7 @@
    - Business address
    - Business type (LLC, Sole Proprietorship, etc.)
    - Tax ID (EIN or SSN)
-   - Website URL: `https://poconossrt.com`
+   - Website URL: `https://poconosstr.com`
    - Phone number
    - Bank account details (for payouts)
 2. Stripe Dashboard → Settings → **Professional settings**:
@@ -59,7 +59,7 @@ STRIPE_PRICE_PROPERTY_MANAGER = price_live_...
 
 ### Site URL (for redirects + sitemap)
 ```
-NEXT_PUBLIC_SITE_URL = https://poconossrt.com
+NEXT_PUBLIC_SITE_URL = https://poconosstr.com
 ```
 
 ### Supabase (if not already set)
@@ -77,7 +77,7 @@ SUPABASE_SERVICE_ROLE_KEY = your-service-role-key
 2. Developers → Webhooks → **Add endpoint**
 3. Endpoint URL:
    ```
-   https://poconossrt.com/api/webhooks
+   https://poconosstr.com/api/webhooks
    ```
 4. Events to send:
    - `checkout.session.completed`
@@ -95,12 +95,12 @@ See the next file in this directory: `DOMAIN-CONNECTION.md`
 
 ## Phase 6: Final Verification
 
-1. Visit `https://poconossrt.com/pricing`
+1. Visit `https://poconosstr.com/pricing`
 2. Click "Upgrade to Standard"
 3. Stripe Checkout should show the live checkout (green header, real price)
 4. Use a real (non-test) card OR complete in test mode one more time
 5. Check Stripe Dashboard → Developers → Webhooks → Logs → see the webhook fire
-6. Visit `https://poconossrt.com/sitemap.xml` and verify URLs use your domain
+6. Visit `https://poconosstr.com/sitemap.xml` and verify URLs use your domain
 
 ---
 

@@ -1,9 +1,9 @@
-# Custom Domain Connection Guide (poconossrt.com)
+# Custom Domain Connection Guide (poconosstr.com)
 
 ## Where to manage DNS
 
 The domain is registered at whichever registrar you bought
-`poconossrt.com` from. Common registrars:
+`poconosstr.com` from. Common registrars:
 - Cloudflare (recommended — also free DNS + proxy)
 - Namecheap
 - GoDaddy
@@ -11,17 +11,17 @@ The domain is registered at whichever registrar you bought
 
 You can check your registrar:
 ```bash
-whois poconossrt.com
+whois poconosstr.com
 ```
 
 ## Step 1 — Add the domain in Vercel
 
 1. Go to [vercel.com](https://vercel.com) → your `poconos-str-directory` project
 2. **Settings → Domains** → **Add Domain**
-3. Type `poconossrt.com` (apex/root) and `www.poconossrt.com` (subdomain)
+3. Type `poconosstr.com` (apex/root) and `www.poconosstr.com` (subdomain)
 4. Vercel will show you a **verification record** to add in your DNS:
 
-   For the apex domain (`poconossrt.com`) Vercel assigns either:
+   For the apex domain (`poconosstr.com`) Vercel assigns either:
    - An **A (ALIAS/ANAME)** record, OR
    - A **CNAME flatten** record
 
@@ -51,7 +51,7 @@ whois poconossrt.com
 
 ### Option B: Namecheap (using ALIAS/ANAME)
 
-1. **Account → Domain List → poconossrt.com → Manage → Advanced DNS**
+1. **Account → Domain List → poconosstr.com → Manage → Advanced DNS**
 
    For the **root domain (apex)**:
    - Create an **A (ALIAS/ANAME/ANAME)** record:
@@ -77,17 +77,17 @@ whois poconossrt.com
 
 1. Vercel → Settings → **Domains** → click the domain → toggle **Force HTTPS** ON
 2. After DNS propagates, all visitors get HTTPS automatically.
-3. Visit `https://www.poconossrt.com` to confirm.
+3. Visit `https://www.poconosstr.com` to confirm.
 
 ## Step 4 — Stripe verification uses the domain
 
 In Stripe Dashboard → Settings → Business settings → set **Website URL**
-to `https://poconossrt.com`.
+to `https://poconosstr.com`.
 
 ## Optional: www → root redirect
 
 Vercel handles this by default. In Vercel → Settings → Domains
-→ click the `www` domain → check **Redirect → poconossrt.com**.
+→ click the `www` domain → check **Redirect → poconosstr.com**.
 
 ## What you should NOT do
 
@@ -101,14 +101,14 @@ Vercel handles this by default. In Vercel → Settings → Domains
 ## Verify everything works
 
 ```bash
-curl -s -o /dev/null -w "%{http_code}" https://poconossrt.com
+curl -s -o /dev/null -w "%{http_code}" https://poconosstr.com
 # Should return 200
 
-dig poconossrt.com +short
+dig poconosstr.com +short
 # Should show a Vercel edge IP (e.g. 76.223.115.108)
 
-curl -s https://poconossrt.com/sitemap.xml
-# Should return XML with https://poconossrt.com URLs
+curl -s https://poconosstr.com/sitemap.xml
+# Should return XML with https://poconosstr.com URLs
 ```
 
 ---

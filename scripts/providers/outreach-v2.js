@@ -4,9 +4,9 @@ const RESEND_API_KEY = process.env.RESEND_API_KEY;
 function sendEmail(to, subject, textBody) {
   return new Promise((resolve) => {
     const data = JSON.stringify({
-      from: "Ryan Flanagan <partner@poconossrt.com>",
+      from: "Ryan Flanagan <partner@poconosstr.com>",
       to: [to],
-      reply_to: "partner@poconossrt.com",
+      reply_to: "partner@poconosstr.com",
       subject: subject,
       text: textBody,
     });
@@ -50,7 +50,7 @@ function buildMessage(p) {
 
   return `Hey ${p.name} team,
 
-I run a local directory for vacation rental owners in the Poconos (poconossrt.com). We list ${cats} that specifically do STR work in Monroe, Pike, Carbon, and Wayne counties.
+I run a local directory for vacation rental owners in the Poconos (poconosstr.com). We list ${cats} that specifically do STR work in Monroe, Pike, Carbon, and Wayne counties.
 
 I came across ${p.name} while building out our directory. Hosts in your area are always looking for reliable ${cats}, and I wanted to make sure you show up when they search.
 
@@ -60,7 +60,7 @@ Either way, wanted to let you know it exists.
 
 Ryan Flanagan
 Poconos STR Directory
-partner@poconossrt.com`;
+partner@poconosstr.com`;
 }
 
 const providers = [
@@ -88,7 +88,7 @@ async function main() {
   if (!RESEND_API_KEY) { console.error("RESEND_API_KEY not found"); process.exit(1); }
 
   console.log(`\n=== Provider Outreach: ${isDryRun ? "DRY RUN" : "LIVE"} ===`);
-  console.log(`From: Ryan Flanagan <partner@poconossrt.com>`);
+  console.log(`From: Ryan Flanagan <partner@poconosstr.com>`);
   console.log(`Recipients: ${providers.length}\n`);
 
   let sent = 0, failed = 0;

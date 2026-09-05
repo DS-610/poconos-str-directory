@@ -46,7 +46,7 @@ composio link gmail
 
 ### Required (always)
 ```env
-NEXT_PUBLIC_SITE_URL=https://poconossrt.com
+NEXT_PUBLIC_SITE_URL=https://poconosstr.com
 NEXT_PUBLIC_SUPABASE_URL=...
 SUPABASE_SERVICE_ROLE_KEY=...
 ```

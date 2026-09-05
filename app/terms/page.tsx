@@ -23,7 +23,7 @@ export default function TermsPage() {
         <p>
           Welcome to Poconos STR Directory. These Terms of Service (&quot;Terms&quot;) govern your access to
           and use of the website at{" "}
-          <a href="https://poconossrt.com" className="text-pine-700 hover:underline">poconossrt.com</a>{" "}
+          <a href="https://poconosstr.com" className="text-pine-700 hover:underline">poconosstr.com</a>{" "}
           (the &quot;Site&quot;) and any services provided through it. By accessing or using the Site, you agree
           to be bound by these Terms.
         </p>
@@ -76,7 +76,7 @@ export default function TermsPage() {
           <li>All prices are in US dollars</li>
           <li>Subscriptions automatically renew unless cancelled before the billing date</li>
           <li>You may cancel at any time through the billing portal or by contacting{" "}
-            <a href="mailto:billing@poconossrt.com" className="text-pine-700 hover:underline">billing@poconossrt.com</a>
+            <a href="mailto:billing@poconosstr.com" className="text-pine-700 hover:underline">billing@poconosstr.com</a>
           </li>
           <li>Cancellation takes effect at the end of the current billing period — no partial refunds for unused time</li>
           <li>See our <Link href="/refunds" className="text-pine-700 hover:underline">Refund Policy</Link> for details</li>
@@ -169,7 +169,7 @@ export default function TermsPage() {
         <p>
           Questions about these Terms? Contact us at:<br />
           Email:{" "}
-          <a href="mailto:support@poconossrt.com" className="text-pine-700 hover:underline">support@poconossrt.com</a><br />
+          <a href="mailto:support@poconosstr.com" className="text-pine-700 hover:underline">support@poconosstr.com</a><br />
           Address: Poconos, Pennsylvania
         </p>
       </div>

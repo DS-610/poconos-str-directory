@@ -23,7 +23,7 @@ export default function CookiesPage() {
         <p>
           This Cookie Policy explains how Poconos STR Directory (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;)
           uses cookies and similar technologies when you visit{" "}
-          <a href="https://poconossrt.com" className="text-pine-700 hover:underline">poconossrt.com</a>{" "}
+          <a href="https://poconosstr.com" className="text-pine-700 hover:underline">poconosstr.com</a>{" "}
           (the &quot;Site&quot;).
         </p>
 
@@ -117,7 +117,7 @@ export default function CookiesPage() {
         <p>
           Questions about our use of cookies? Contact us at:<br />
           Email:{" "}
-          <a href="mailto:support@poconossrt.com" className="text-pine-700 hover:underline">support@poconossrt.com</a><br />
+          <a href="mailto:support@poconosstr.com" className="text-pine-700 hover:underline">support@poconosstr.com</a><br />
           Address: Poconos, Pennsylvania
         </p>
       </div>

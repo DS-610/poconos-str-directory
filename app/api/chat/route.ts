@@ -4,7 +4,7 @@ import type { Provider } from "@/lib/types";
 
 const SITE_INFO = {
   name: "Poconos STR Directory",
-  url: "poconossrt.com",
+  url: "poconosstr.com",
   description: "A directory connecting Poconos vacation rental hosts with trusted local service providers.",
   counties: ["Monroe", "Pike", "Carbon", "Wayne"],
   categories: {
@@ -115,13 +115,13 @@ function buildResponse(intent: string, params: Record<string, string>, providers
       return `**Pricing Overview:**\n\n**For Providers:**\n• Basic — Free forever\n• Standard — $75/mo (or $750/yr, save 2 months)\n• Premium — $150/mo (or $1,500/yr) — includes Verified badge\n• Featured — $250/mo (or $2,500/yr) — homepage rotation + lead delivery\n\n**For Hosts:**\n• Free Host — Free forever (limited browsing)\n• Pro Host — $15/mo (full access + quote requests)\n• Property Manager — $49/mo (team access + bulk matching)\n\n**One-time products:**\n• Featured Boost — $49 (7 days of top placement)\n• Verification Badge — $99 (one-time, never expires)\n\n👉 [View full pricing](/pricing)`;
 
     case "list_business":
-      return `**Claiming your listing is easy:**\n\n1. Go to [poconossrt.com/pricing](/pricing)\n2. Start with the free Basic listing (no credit card needed)\n3. Your business will appear in search results for your county\n4. Upgrade anytime for photos, reviews, and priority placement\n\nThe Basic listing includes your name, category, phone, and service area. You can claim it in about 2 minutes.\n\n👉 [Claim your listing now](/pricing)`;
+      return `**Claiming your listing is easy:**\n\n1. Go to [poconosstr.com/pricing](/pricing)\n2. Start with the free Basic listing (no credit card needed)\n3. Your business will appear in search results for your county\n4. Upgrade anytime for photos, reviews, and priority placement\n\nThe Basic listing includes your name, category, phone, and service area. You can claim it in about 2 minutes.\n\n👉 [Claim your listing now](/pricing)`;
 
     case "partner":
       return `**We have a partner program for:**\n\n• Property Management Companies — bulk access for your properties\n• Travel Agents & Booking Agencies — include our directory in travel packages\n• Real Estate Agents — help your investor clients find providers\n\nPartners earn $10 per host sign-up and 20% recurring commission on paid plans.\n\n👉 [Learn more about partnering](/partners)`;
 
     case "contact":
-      return `**Reach us here:**\n\n• General — contact@poconossrt.com\n• Support — support@poconossrt.com\n• Billing — billing@poconossrt.com\n• Partnerships — partner@poconossrt.com\n\nOr use the [contact form](/contact) and we'll get back to you within 1–2 business days.`;
+      return `**Reach us here:**\n\n• General — contact@poconosstr.com\n• Support — support@poconosstr.com\n• Billing — billing@poconosstr.com\n• Partnerships — partner@poconosstr.com\n\nOr use the [contact form](/contact) and we'll get back to you within 1–2 business days.`;
 
     case "navigate":
       return `**Quick links:**\n\n• [Browse all providers](/providers) — search by category, county, or town\n• [Categories](/categories) — browse by service type\n• [Pricing](/pricing) — view plans and claim your listing\n• [Blog](/blog) — guides for Poconos STR hosts\n• [Partners](/partners) — referral program for agencies and PMs\n• [Contact](/contact) — get in touch\n\nWhat would you like to do?`;
@@ -185,7 +185,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("Chat error:", error);
     return NextResponse.json({
-      reply: "Sorry, I hit an error. Try browsing directly at poconossrt.com/providers or contact us at support@poconossrt.com.",
+      reply: "Sorry, I hit an error. Try browsing directly at poconosstr.com/providers or contact us at support@poconosstr.com.",
     });
   }
 }

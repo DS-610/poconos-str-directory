@@ -3,7 +3,7 @@ import { CATEGORIES } from "@/lib/data";
 import { getAllProviders } from "@/lib/repository";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || "https://poconossrt.com";
+  const base = process.env.NEXT_PUBLIC_SITE_URL || "https://poconosstr.com";
 
   const providers = await getAllProviders();
 

@@ -44,7 +44,7 @@ export async function POST(request: Request) {
             <p style="margin-top: 8px; color: #1c1917; white-space: pre-wrap;">${message}</p>
           </div>
           <p style="margin-top: 24px; font-size: 12px; color: #a8a29e;">
-            Submitted from poconossrt.com/contact at ${new Date().toLocaleString("en-US", { timeZone: "America/New_York" })}
+            Submitted from poconosstr.com/contact at ${new Date().toLocaleString("en-US", { timeZone: "America/New_York" })}
           </p>
         </div>
       `;
@@ -56,8 +56,8 @@ export async function POST(request: Request) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: "Poconos STR Directory <contact@poconossrt.com>",
-          to: ["contact@poconossrt.com"],
+          from: "Poconos STR Directory <contact@poconosstr.com>",
+          to: ["contact@poconosstr.com"],
           reply_to: email,
           subject,
           html: htmlBody,

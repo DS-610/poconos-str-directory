@@ -31,26 +31,26 @@ export default function ContactPage() {
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           <div>
             <p className="text-sm font-semibold text-stone-900">General inquiries</p>
-            <a href="mailto:contact@poconossrt.com" className="text-sm text-pine-700 hover:underline">
-              contact@poconossrt.com
+            <a href="mailto:contact@poconosstr.com" className="text-sm text-pine-700 hover:underline">
+              contact@poconosstr.com
             </a>
           </div>
           <div>
             <p className="text-sm font-semibold text-stone-900">Support &amp; help</p>
-            <a href="mailto:support@poconossrt.com" className="text-sm text-pine-700 hover:underline">
-              support@poconossrt.com
+            <a href="mailto:support@poconosstr.com" className="text-sm text-pine-700 hover:underline">
+              support@poconosstr.com
             </a>
           </div>
           <div>
             <p className="text-sm font-semibold text-stone-900">Billing &amp; refunds</p>
-            <a href="mailto:billing@poconossrt.com" className="text-sm text-pine-700 hover:underline">
-              billing@poconossrt.com
+            <a href="mailto:billing@poconosstr.com" className="text-sm text-pine-700 hover:underline">
+              billing@poconosstr.com
             </a>
           </div>
           <div>
             <p className="text-sm font-semibold text-stone-900">Partnerships</p>
-            <a href="mailto:partner@poconossrt.com" className="text-sm text-pine-700 hover:underline">
-              partner@poconossrt.com
+            <a href="mailto:partner@poconosstr.com" className="text-sm text-pine-700 hover:underline">
+              partner@poconosstr.com
             </a>
           </div>
         </div>

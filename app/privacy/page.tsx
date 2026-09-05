@@ -22,7 +22,7 @@ export default function PrivacyPage() {
       <div className="prose-sm mt-8 space-y-6 leading-7 text-stone-700">
         <p>
           Poconos STR Directory (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) operates the website at{" "}
-          <a href="https://poconossrt.com" className="text-pine-700 hover:underline">poconossrt.com</a>{" "}
+          <a href="https://poconosstr.com" className="text-pine-700 hover:underline">poconosstr.com</a>{" "}
           (the &quot;Site&quot;). This Privacy Policy explains how we collect, use, disclose, and safeguard your
           information when you visit our Site or use our services.
         </p>
@@ -89,7 +89,7 @@ export default function PrivacyPage() {
         </ul>
         <p>
           To exercise any of these rights, contact us at{" "}
-          <a href="mailto:support@poconossrt.com" className="text-pine-700 hover:underline">support@poconossrt.com</a>.
+          <a href="mailto:support@poconosstr.com" className="text-pine-700 hover:underline">support@poconosstr.com</a>.
         </p>
 
         <h2 className="text-xl font-bold text-stone-900">7. Children&apos;s Privacy</h2>
@@ -117,10 +117,10 @@ export default function PrivacyPage() {
         <p>
           If you have questions about this Privacy Policy, please contact us at:<br />
           Email:{" "}
-          <a href="mailto:support@poconossrt.com" className="text-pine-700 hover:underline">support@poconossrt.com</a><br />
+          <a href="mailto:support@poconosstr.com" className="text-pine-700 hover:underline">support@poconosstr.com</a><br />
           Address: Poconos, Pennsylvania<br />
           Website:{" "}
-          <a href="https://poconossrt.com" className="text-pine-700 hover:underline">poconossrt.com</a>
+          <a href="https://poconosstr.com" className="text-pine-700 hover:underline">poconosstr.com</a>
         </p>
       </div>
     </div>

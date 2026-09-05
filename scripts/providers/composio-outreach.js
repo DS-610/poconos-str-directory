@@ -1,8 +1,8 @@
 const https = require("https");
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
-const FROM_EMAIL = "Ryan Flanagan <partner@poconossrt.com>";
-const REPLY_TO = "partner@poconossrt.com";
+const FROM_EMAIL = "Ryan Flanagan <partner@poconosstr.com>";
+const REPLY_TO = "partner@poconosstr.com";
 
 function sendViaResend(to, subject, html) {
   return new Promise((resolve) => {
@@ -47,7 +47,7 @@ function buildBody(provider) {
 <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #1c1917;">
   <p>Hi ${provider.name} team,</p>
 
-  <p>I'm Ryan, founder of <a href="https://poconossrt.com" style="color: #46845d;">Poconos STR Directory</a> — a local directory connecting short-term rental hosts with trusted service providers across the Pocono Mountains.</p>
+  <p>I'm Ryan, founder of <a href="https://poconosstr.com" style="color: #46845d;">Poconos STR Directory</a> — a local directory connecting short-term rental hosts with trusted service providers across the Pocono Mountains.</p>
 
   <p>I found ${provider.name} while building our directory of vetted providers for vacation rental hosts in Monroe, Pike, Carbon, and Wayne counties. We're listing cleaning crews, handymen, HVAC techs, plumbers, pest control, and more — all specifically focused on STR operations.</p>
 
@@ -61,7 +61,7 @@ function buildBody(provider) {
   </ul>
 
   <p>You can claim your free listing in 2 minutes here:<br/>
-  <a href="https://poconossrt.com/pricing" style="display: inline-block; margin: 12px 0; padding: 10px 24px; background: #46845d; color: white; border-radius: 999px; text-decoration: none; font-weight: bold;">Claim Free Listing →</a></p>
+  <a href="https://poconosstr.com/pricing" style="display: inline-block; margin: 12px 0; padding: 10px 24px; background: #46845d; color: white; border-radius: 999px; text-decoration: none; font-weight: bold;">Claim Free Listing →</a></p>
 
   <p>Or just reply to this email with your business details and I'll set it up for you.</p>
 
@@ -70,8 +70,8 @@ function buildBody(provider) {
   <p>Best,<br/>
   <strong>Ryan Flanagan</strong><br/>
   Founder, Poconos STR Directory<br/>
-  <a href="https://poconossrt.com" style="color: #46845d;">poconossrt.com</a><br/>
-  <a href="mailto:partner@poconossrt.com" style="color: #46845d;">partner@poconossrt.com</a></p>
+  <a href="https://poconosstr.com" style="color: #46845d;">poconosstr.com</a><br/>
+  <a href="mailto:partner@poconosstr.com" style="color: #46845d;">partner@poconosstr.com</a></p>
 </div>`;
 }
 
