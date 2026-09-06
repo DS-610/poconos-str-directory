@@ -254,7 +254,7 @@ export default function PricingSection() {
 
       {/* Host Plans */}
       <div className="mt-20">
-        <h2 className="text-center text-xl font-bold text-stone-900">For hosts & property managers</h2>
+        <h2 id="host-plans" className="text-center text-xl font-bold text-stone-900">For hosts & property managers</h2>
         <p className="mt-1 text-center text-sm text-stone-500">
           Free to browse. Upgrade for full access and quote requests.
         </p>

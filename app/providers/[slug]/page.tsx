@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CATEGORY_LABELS, TIER_LABELS, TIER_STYLES, formatPhone, formatRating } from "@/lib/utils";
 import { getProviderBySlug, getAllProviders } from "@/lib/repository";
+import ShowcaseSection from "@/components/ShowcaseSection";
 
 type Params = Promise<{ slug: string }>;
 
@@ -159,6 +160,35 @@ export default async function ProviderPage({ params }: { params: Params }) {
             Request a Quote
           </a>
         </div>
+      </div>
+
+      {/* Showcase Section */}
+      <div className="mt-8 rounded-3xl border border-stone-200 bg-white p-6 shadow-sm sm:p-8">
+        <ShowcaseSection
+          providerName={provider.name}
+          category={provider.category}
+          rating={provider.rating}
+          reviewCount={provider.reviewCount}
+          showcaseImages={[
+            ...(provider.photoUrl
+              ? [{ url: provider.photoUrl, caption: "Featured photo", source: "provider" as const }]
+              : []),
+            ...provider.services.slice(0, 3).map((s, i) => ({
+              caption: `${s} — ${provider.name}`,
+              source: "sample" as const,
+            })),
+          ]}
+          testimonials={[
+            ...(provider.reviewCount > 0
+              ? [{
+                  text: `Trusted by ${provider.reviewCount} hosts in the Poconos area.`,
+                  author: "Verified Host",
+                  rating: Math.min(5, Math.max(3, Math.round(provider.rating))),
+                }]
+              : []),
+          ]}
+          isSubscribed={false}
+        />
       </div>
     </div>
   );

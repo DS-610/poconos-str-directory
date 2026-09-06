@@ -42,3 +42,4 @@ next-env.d.ts
 
 # keep .env.example as a template
 !.env.example
+.email-finder-progress.jsonl
