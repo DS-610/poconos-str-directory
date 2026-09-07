@@ -120,8 +120,12 @@ async function main() {
   const list = process.argv.includes("--list");
   const replyArg = process.argv.find((a) => a.startsWith("--reply="));
   const idArg = replyArg?.split("=")[1];
-  const textArgIdx = process.argv.indexOf("--text=");
-  const text = textArgIdx >= 0 ? process.argv[textArgIdx].split("=").slice(1).join("=") : "";
+  const textArg = process.argv.find((a) => a.startsWith("--text="));
+  let text = textArg ? textArg.split("=").slice(1).join("=") : "";
+  const textFileArg = process.argv.find((a) => a.startsWith("--text-file="));
+  if (textFileArg) {
+    text = fs.readFileSync(path.join(__dirname, "..", "..", textFileArg.split("=").slice(1).join("=")), "utf-8").trim();
+  }
 
   if (list || (!idArg && !text)) {
     const res = await supabaseFetch("/rest/v1/inbound_messages?status=eq.new&order=created_at.asc");
